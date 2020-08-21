@@ -7,6 +7,14 @@ GUILD EDUCATION CHAT APP POC
 Back End:  Using Google Firebase to handle auth and realtime data sync.  
 FE:  React, bootstrapped with create-react-app
 
+###
+- After installing and starting application, the app will start on the Home page.
+- Register a new user by clicking Create New Account
+- Register with a email/password
+- Open up an incognito window, or another browser -> Create another user to chat with
+- Commence Chatting
+
+
 ***
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

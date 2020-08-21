@@ -8,7 +8,7 @@ export default class Home extends Component {
       <section>
         <h1>Guild Chat</h1>
         <div>
-          <Link to="/register">Create New Account</Link>
+          <Link to="/register">Create New Account</Link><br/>
           <Link to="/login">Login to Your Account</Link>
         </div>
       </section>

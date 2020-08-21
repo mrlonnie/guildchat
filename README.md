@@ -1,3 +1,14 @@
+GUILD EDUCATION CHAT APP POC
+
+### `yarn install`
+### `yarn start`
+
+## Notes
+Back End:  Using Google Firebase to handle auth and realtime data sync.  
+FE:  React, bootstrapped with create-react-app
+
+***
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

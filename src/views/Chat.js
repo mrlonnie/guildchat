@@ -33,8 +33,8 @@ const Chat = () => {
 
       const markMessagesRead = (snapshot) => {
         snapshot.forEach((child) => {
-          console.log(child.val())
-          if(child.val().uid !== user.uid) {
+          let item = child.val();
+          if(item.uid !== user.uid && !item.isRead) {
             console.log('Updating is read')
             child.ref.update({
               isRead: true
@@ -47,10 +47,6 @@ const Chat = () => {
       updateErrorMessage(error.message);
     }
   }, [user.uid]);
-
-
-
-
 
   const handleChange = (e) => {
     updateMessage(e.target.value);

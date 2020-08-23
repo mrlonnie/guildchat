@@ -28,12 +28,29 @@ const Chat = () => {
         });
         updateChats(chats);
         updateLoader(false);
+        markMessagesRead(snapshot)
       });
+
+      const markMessagesRead = (snapshot) => {
+        snapshot.forEach((child) => {
+          console.log(child.val())
+          if(child.val().uid !== user.uid) {
+            console.log('Updating is read')
+            child.ref.update({
+              isRead: true
+            });
+          }
+        })
+      }
     } catch (error) {
       updateLoader(true);
       updateErrorMessage(error.message);
     }
-  }, []);
+  }, [user.uid]);
+
+
+
+
 
   const handleChange = (e) => {
     updateMessage(e.target.value);
@@ -46,7 +63,8 @@ const Chat = () => {
       await firebaseDb.ref("chats").push({
         message: message,
         timestamp: moment().unix(),
-        uid: user.uid
+        uid: user.uid,
+        isRead: false
       });
       updateMessage('');
     } catch (error) {
@@ -64,10 +82,14 @@ const Chat = () => {
           >
           {
             user.uid !== chat.uid &&
-            <span>{user.email}<br/></span>
+              <span>{user.email}<br/></span>
           }
           {chat.message}<br/>
-          Sent:{moment(chat.timestamp).format('MM-DD-YYYY hh:mm')}
+          Sent:{moment(chat.timestamp).format('MM-DD-YYYY hh:mm')}< br/>
+          { 
+            user.uid === chat.uid &&
+              <span>{chat.isRead ? 'Message Read' : 'Message Unread'}</span>
+          }
           </p>
           <hr/>
         </div>

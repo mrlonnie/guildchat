@@ -7,7 +7,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Home from './views/Home';
-import Chat from './views/Chat';
+import Chat from './views/Chat/Chat';
 import Register from './views/Register';
 import Login from './views/Login';
 import { firebaseAuth } from './services/firebase';

@@ -14,7 +14,7 @@ FE:  React, bootstrapped with create-react-app
 - Open up an incognito window, or another browser -> Create another user to chat with
 - Commence Chatting
 - Extra:  Added an `isRead` flag so sender is notified when the message has been sent and read!
-
+- Extra:  Added some Styled Components to enhance a terrible experience.
 
 
 ***
